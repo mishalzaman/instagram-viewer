@@ -1,1 +1,33 @@
-Instagram Viewer
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Instagram viewer</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		<script src="js/instagram_viewer.js"></script>
+		<script src="js/instagram_viewer_google_map.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+	</head>
+
+	<body>
+		<div id="header">
+			<p class="close">Close</p>
+			<p>Instagram Map Viewer</p>
+		</div>
+
+		<div id="images"></div>
+
+		<div id="map-canvas"></div>
+	</body>
+</html>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('body').on('click', '.close', function(){
+		console.log(1);
+		$('#images').empty().hide();
+	});
+
+	$
+});
+</script>
