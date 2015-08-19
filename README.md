@@ -1,2 +1,4 @@
 # instagram-viewer
-A Responsive viewer for Instagram
+
+
+Displays images from instagram based on a geographic location
