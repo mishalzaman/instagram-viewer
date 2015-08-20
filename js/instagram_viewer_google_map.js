@@ -6,9 +6,9 @@ function initialize() {
         ),
         mapOptions = {
             center: new google.maps.LatLng(44.5403, -78.5463),
-            zoom: 5,
-            maxZoom: 15,
-            minZoom: 2,
+            zoom: 6,
+            maxZoom: 6,
+            minZoom: 6,
             mapTypeControlOptions: {
                 mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
             },
@@ -22,7 +22,7 @@ function initialize() {
     map.setMapTypeId('map_style');
 
     // Get the latitude / longitude when user presses the search button
-    document.getElementById("search-button").addEventListener("click", function(){
+    document.getElementById("search-button").addEventListener("click", function(event){
         var location = map.getCenter();
         igViewer.getBYLatLong(location.lat(), location.lng());
     });

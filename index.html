@@ -16,19 +16,10 @@
 
 		<div id="image-viewer">
 			<div class="image-container">
-				<div class="close-images">close</div>
 				<div id="images">
-					<div class="image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200"/></div>
-					<div class="image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200"/></div>
-					<div class="image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200"/></div>
-					<div class="image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200"/></div>
-					<div class="image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200"/></div>
-					<div class="image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200"/></div>
-					<div class="image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200"/></div>
-					<div class="image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200"/></div>
-					<div class="image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200"/></div>
-					<div class="image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200"/></div>
+					<!-- inserts image thumbnails here -->
 				</div>	
+				<div class="close-images">close</div>
 			</div>
 		</div>
 
@@ -42,12 +33,9 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#search-button').click(function(){
-		$('#image-viewer').show();
-	});
-
 	$('.close-images').click(function(){
 		$('#image-viewer').hide();
+		$('#search-button').fadeIn();
 	});
 });
 </script>

@@ -12,9 +12,29 @@ html {
 	position: relative;
 }
 
+/* Header */
+#header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 100;
+	background: #fff;
+	border-bottom: 1px dotted #ccc;
+}
+
+#header p {
+	text-align: center;
+	color: #990066;
+	padding: 10px;
+	border-left: 1px dotted #ccc;
+	margin: 0px;
+}
+
 #image-viewer {
 	display: none;
 	position: fixed;
+	padding-bottom: 50px;
 	z-index: 10000;
 	top: 40px;
 	left: 0px;
@@ -27,16 +47,25 @@ html {
 
 #image-viewer .image-container {
 	max-width: 900px;
-	margin: 40px auto 0px;
+	margin: 20px auto 0px;
 	overflow: hidden;
 }
 
 .image-container .close-images {
-	float: right;
-	cursor: pointer;
-	background: #000;
-	color: #fff;
-	padding: 14px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    width: 45px;
+    cursor: pointer;
+    background: #990066;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
 }
 
 #images {
@@ -55,46 +84,47 @@ html {
 	padding: 5%;
 }
 
-/* Header */
-#header {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	z-index: 100;
-	background: #fff;
-	border-bottom: 1px dotted #ccc;
-}
-
-#header p {
-	text-align: center;
-	padding: 10px;
-	border-left: 1px dotted #ccc;
-	margin: 0px;
-}
-
 /* Search */
 .search-field {
 	position: fixed;
-	left: 0px;
-	right: 0px;
-	top: 0px;
-	bottom: 0px;
-	margin: auto;
-	width: 100px;
-	height: 100px;
-	border: 2px solid #000;
-	border-radius: 50px;
-	z-index: 1000;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border: 2px dotted #990066;
+    border-radius: 5px;
+    z-index: 1000;
 }
 
 #search-button {
-	margin-right: -70px;
-	float: right;
-	color: #fff;
-	padding: 6px;
-	background: #000;
-	cursor: pointer;
+	margin-right: -80px;
+    float: right;
+    width: 60px;
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    background: #990066;
+    cursor: pointer;
+}
+
+@-webkit-keyframes rotate {
+  	from {
+    	-webkit-transform: rotate(0deg);
+  	}
+  	to { 
+    	-webkit-transform: rotate(360deg);
+  	}
+}
+
+.loading
+{
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         1.5s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
 }
 
 /* Canvas */
