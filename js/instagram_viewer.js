@@ -1,3 +1,5 @@
+// Created by Mishal Zaman
+
 igViewer = new function () {
     var self = this,
         clientId = '5f1ea31bdbfc4fdb9a671c1748c66826',
