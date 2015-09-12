@@ -1,6 +1,12 @@
 # instagram-viewer
 
+Displays images from instagram based on a geographic location. Currently in work in progress.
 
-Displays images from instagram based on a geographic location.
+You can view the current version [here] (http://mishalzaman.github.io/instagram-viewer/)
 
-Work in process
+Features to add:
+
+- Mobile responsiveness
+- Pagination
+- Improved UI (better user notification)
+- Better transitions
