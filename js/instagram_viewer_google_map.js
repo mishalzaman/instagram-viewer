@@ -9,14 +9,14 @@ function initialize() {
         mapOptions = {
             center: new google.maps.LatLng(44.5403, -78.5463),
             zoom: 6,
-            maxZoom: 6,
-            minZoom: 6,
+            // maxZoom: 6,
+            // minZoom: 6,
             mapTypeControlOptions: {
                 mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
             },
             disableDefaultUI: true,
-            // disableDoubleClickZoom: true,
-            scrollwheel: false
+            disableDoubleClickZoom: false,
+            scrollwheel: true
         },
         map = new google.maps.Map(mapCanvas, mapOptions);
 
@@ -24,9 +24,21 @@ function initialize() {
     map.setMapTypeId('map_style');
 
     // Get the latitude / longitude when user presses the search button
-    document.getElementById("search-button").addEventListener("click", function(event){
-        var location = map.getCenter();
-        igViewer.getBYLatLong(location.lat(), location.lng());
+    document.getElementById("search").addEventListener("click", function(event){
+        var state = this.getAttribute('data-state');
+
+        switch(state) {
+            case 'search':
+                var location = map.getCenter();
+                igViewer.getBYLatLong(location.lat(), location.lng());
+                this.setAttribute('data-state', 'map');
+                document.getElementById('images').setAttribute('class', 'show');
+                break;
+            case 'map':
+                this.setAttribute('data-state', 'search');
+                document.getElementById('images').setAttribute('class', 'hide');
+                break;
+        }
     });
 
 };

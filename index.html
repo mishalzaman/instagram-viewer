@@ -10,24 +10,19 @@
 	</head>
 
 	<body>
-		<div id="header">
-			<p>Instagram Map Viewer</p>
+	<!-- Menu -->
+		<div id="menu">
+			<h1>Pequad</h1>
+			<p>Search Instagram for images at locations around the world.</p>
+			<div id="search" data-state="search">Search</div>
 		</div>
 
-		<div id="image-viewer">
-			<div class="image-container">
-				<div id="images">
-					<!-- inserts image thumbnails here -->
-				</div>	
-				<div class="close-images">close</div>
-			</div>
+		<div id="images" class="hide">
+			<!-- images get populated here -->
 		</div>
 
-		<div class="search-field">
-			<div id="search-button">search</div>
-		</div>
-
-		<div id="map-canvas"></div>
+	<!-- The map canvas -->
+		<div id="map-canvas"><div class="pointer"></div></div>
 	</body>
 </html>
 

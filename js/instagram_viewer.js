@@ -14,7 +14,6 @@ igViewer = new function () {
 
     // Retrieve a list of media Ids by latitude / longitude
     this.getBYLatLong = function( lat, lng ) {     
-        self.userMessage( 'Searching for images, please wait ...' );
 
         $.ajax({
                 type: "GET",
@@ -28,10 +27,6 @@ igViewer = new function () {
                     if( response.data.length != 0) {
                         self.generateMedia( response );
                     } else {
-                        self.userMessage( 'Could not find any images from that location' );
-                        setTimeout(function(){
-                            self.userMessage();
-                        }, 4000);
                         setTimeout(function(){
                             $('#search-button').fadeIn();
                         }, 2000);
@@ -61,8 +56,6 @@ igViewer = new function () {
                                 access_token : accessToken
                             },
                             success: function( response ) {
-                                console.log('second');
-                                console.log(response);
                                 if( response.data.length !== 0 ) {
                                     self.collectMedia( response.data );
                                 }
@@ -72,8 +65,9 @@ igViewer = new function () {
 
                                 if( counter == maxCounter ) {
                                     self.display();
-                                    self.userMessage();
                                 }
+
+                                console.log(images);
                             }
                         }
                     );  
@@ -95,8 +89,14 @@ igViewer = new function () {
 
         $.each( images, function( key, value ){
             console.log(key);
-            $image = $('<div class="image"><img/></div>');
+            $image = $('<div class="image"><img/><p></p></div>');
             $image.find('img').attr('src', value.images.thumbnail.url);
+            $image.find('p').append(
+                value.user.username + '<br>' +
+                value.user.full_name + '<br>' +
+                value.location.name + '<br>' +
+                value.likes.count + '<br>' 
+            );
             $('#images').append( $image );
 
             if( key == count ) {
@@ -104,16 +104,5 @@ igViewer = new function () {
                 $('#search-button').hide();
             }
         });
-    };
-
-    this.userMessage = function( message ) {
-        $message = $('#header p');
-
-        if( typeof message == 'undefined') {
-            $message.text('Instagram Map Viewer');
-            return;
-        }
-
-        $message.text( message );
     };
 };
